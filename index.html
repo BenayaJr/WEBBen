@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laporan Teori - CSS, JS, dan Bootstrap</title>
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- CSS Rapi -->
+  <style id="styleRapi">
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #1e1e2f;
+    }
+
+    .section {
+      background-color: #ffffff;
+      border: 1px solid #dee2e6;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 30px auto;
+      max-width: 900px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    h3 {
+      color: #007bff;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+
+    code {
+      background-color: #e9ecef;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    pre {
+      background-color: #f1f3f5;
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+
+    #toggleStyleBtn {
+      display: block;
+      margin: 0 auto 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>LAPORAN TEORI</h1>
+  <h2>Benaya Joshrael Tualangi | 202332044</h2>
+
+  <button id="toggleStyleBtn" class="btn btn-outline-primary">Ubah ke Tampilan Berantakan</button>
+
+  <div class="section">
+    <h3 onclick="toggleSection(this)">1. Mengapa menggunakan CSS dan JavaScript dalam pemrograman web?</h3>
+    <div>
+      <ul>
+        <li><strong>CSS</strong> digunakan untuk mengatur tampilan halaman web agar lebih menarik dan konsisten.</li>
+        <li><strong>JavaScript</strong> digunakan untuk menambahkan interaksi dan dinamika pada halaman web.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 onclick="toggleSection(this)">2. Bagaimana CSS dan JavaScript dapat diintegrasikan dalam pemrograman web?</h3>
+    <div>
+      <p>CSS dan JavaScript dapat diintegrasikan melalui:</p>
+      <ul>
+        <li><strong>Inline</strong>: langsung di dalam elemen HTML.</li>
+        <li><strong>Internal</strong>: menggunakan tag <code>&lt;style&gt;</code> dan <code>&lt;script&gt;</code> di file HTML.</li>
+        <li><strong>Eksternal</strong>: menghubungkan file .css atau .js terpisah menggunakan <code>&lt;link&gt;</code> dan <code>&lt;script src=""&gt;</code>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 onclick="toggleSection(this)">3. Jelaskan apa saja keuntungan menggunakan JavaScript dan CSS?</h3>
+    <div>
+      <strong>Keuntungan CSS:</strong>
+      <ul>
+        <li>Desain lebih konsisten dan mudah diubah.</li>
+        <li>Responsive design lebih mudah dibuat.</li>
+      </ul>
+      <strong>Keuntungan JavaScript:</strong>
+      <ul>
+        <li>Membuat halaman lebih interaktif.</li>
+        <li>Dapat memproses data tanpa reload halaman.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 onclick="toggleSection(this)">4. Jelaskan apa saja keuntungan menggunakan Bootstrap?</h3>
+    <div>
+      <ul>
+        <li>Mempermudah pembuatan desain responsif.</li>
+        <li>Tersedia banyak komponen siap pakai.</li>
+        <li>Desain jadi konsisten tanpa banyak coding.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 onclick="toggleSection(this)">5. Contoh Penggunaan Bootstrap</h3>
+    <div>
+      <p><strong>Contoh kode:</strong></p>
+      <pre><code>&lt;div class="alert alert-success" role="alert"&gt;
+  Ini adalah alert sukses dari Bootstrap!
+&lt;/div&gt;</code></pre>
+      <p><strong>Penjelasan:</strong></p>
+      <ul>
+        <li>Kode ini menampilkan alert warna hijau yang menandakan pesan sukses.</li>
+        <li>Class <code>alert alert-success</code> adalah bawaan dari Bootstrap.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function toggleSection(header) {
+      const content = header.nextElementSibling;
+      content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    }
+
+    const toggleBtn = document.getElementById('toggleStyleBtn');
+    const styleRapi = document.getElementById('styleRapi');
+
+    toggleBtn.addEventListener('click', () => {
+      if (styleRapi.disabled) {
+        styleRapi.disabled = false;
+        toggleBtn.textContent = "Ubah ke Tampilan Berantakan";
+        toggleBtn.classList.remove('btn-danger');
+        toggleBtn.classList.add('btn-outline-primary');
+      } else {
+        styleRapi.disabled = true;
+        toggleBtn.textContent = "Ubah ke Tampilan Rapi";
+        toggleBtn.classList.remove('btn-outline-primary');
+        toggleBtn.classList.add('btn-danger');
+      }
+    });
+  </script>
+</body>
+</html>
